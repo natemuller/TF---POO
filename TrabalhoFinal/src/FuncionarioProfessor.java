@@ -5,13 +5,10 @@ public class FuncionarioProfessor extends Funcionario {
 	}
 
 	public void montarTreino(Aluno a) {
-
+		
 	}
 
 	public void atender() {
 
-	}
-	public String toString() {
-		return null;
 	}
 }

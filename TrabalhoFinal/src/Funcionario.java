@@ -31,4 +31,8 @@ public class Funcionario extends Pessoa {
 	public boolean getEmAtendimento() {
 		return this.emAtendimento;
 	}	
+
+	public void setEmAtendimento(boolean emAtendimento) {
+		this.emAtendimento = emAtendimento;
+	}
 }

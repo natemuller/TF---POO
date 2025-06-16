@@ -4,8 +4,8 @@ public class FuncionarioProfessor extends Funcionario {
     	super(nome, cpf, dataNasc, idFuncionario, dataContratacao, cargo, emAtendimento);
 	}
 
-	public void montarTreino(Aluno a) {
-		
+	public void consultarTreino(Treino t) {
+		System.out.println(t.toString());
 	}
 
 	public void atender() {

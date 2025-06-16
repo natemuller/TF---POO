@@ -8,20 +8,27 @@ public class Funcionario extends Pessoa {
 
 	private boolean emAtendimento;
 
+	public Funcionario(String nome, String cpf, String dataNasc, int idFuncionario, String dataContratacao, Cargo cargo, boolean emAtendimento) {
+		super(nome, cpf, dataNasc);
+		this.idFuncionario = idFuncionario;
+		this.dataContratacao = dataContratacao;
+		this.cargo = cargo;
+		this.emAtendimento = emAtendimento;
+	}
+
 	public int getIdFuncionario() {
-		return 0;
+		return this.idFuncionario;
 	}
 
 	public String getDataContratacao() {
-		return null;
+		return this.dataContratacao;
 	}
 
-	public Cargo gatCargo() {
-		return null;
+	public Cargo getCargo() {
+		return this.cargo;
 	}
 
-	public void Funcionario() {
-
-	}
-
+	public boolean getEmAtendimento() {
+		return this.emAtendimento;
+	}	
 }

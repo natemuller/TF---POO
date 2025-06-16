@@ -18,27 +18,23 @@ public class Aluno extends Pessoa {
 
 
 	public int getNroMatricula() {
-		return 0;
+		return this.nroMatricula;
 	}
 
 	public Tipo getTipo() {
-		return null;
+		return this.tipo;
 	}
 
 	public String getDataInicio() {
-		return null;
+		return this.dataInicio;
 	}
 
 	public int getDuracao() {
-		return 0;
+		return this.duracao;
 	}
 
 	public String toString() {
-		return null;
+		return "Aluno " + this.getNome() + "[Matricula: " + this.nroMatricula + ", tipo: " + this.tipo + ". Aluno desde: " + this.dataInicio
+				+ ", com plano de duracao: " + this.duracao + "]";
 	}
-
-	public void Aluno() {
-
-	}
-
 }

@@ -8,6 +8,15 @@ public class Aluno extends Pessoa {
 
 	private int duracao;
 
+	public Aluno(String nome, String cpf, String dataNasc, int nroMatricula, Tipo tipo, String dataInicio, int duracao) {
+		super(nome, cpf, dataNasc);
+		this.nroMatricula = nroMatricula;
+		this.tipo = tipo;
+		this.dataInicio = dataInicio;
+		this.duracao = duracao;
+	}
+
+
 	public int getNroMatricula() {
 		return 0;
 	}

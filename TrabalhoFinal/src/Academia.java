@@ -1,23 +1,68 @@
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Academia {
 
-	private List treinos;
+    private Map<Integer, Treino> treinosMap;
+	private Set<Funcionario> funcionarios = new TreeSet<>();
+	private Set<Aluno> alunos = new TreeSet<>();
 
-	private List funcionarios;
-
-	private List alunos;
-
-	public double calculaMediaDuracaoTreinos() {
-		return 0;
+	public Academia(){
+		treinosMap = new HashMap<>();
+ 
 	}
 
-	public int contaProfessoresDisponiveis() {
-		return 0;
+	public void adicionarAluno(Aluno a){
+		alunos.add(a);
+	}
+	
+	public void removerAluno(String nome){
+		boolean removido = alunos.removeIf(a -> a.getNome().equals(nome));
+		if(removido){
+			System.out.println("Aluno Removido com Sucesso: " + nome);
+		} else{
+			System.out.println("Aluno não encontrado nos dados da academia;");
+		}
 	}
 
-	public int contaAlunosPorTipo() {
-		return 0;
+	public Aluno buscarAluno(int nroMatricula){
+		return alunos.stream()
+				.filter(a -> a.getNroMatricula() == nroMatricula)
+				.findFirst()
+				.orElse(null);
 	}
 
-}
+	public void adicionarFuncionario(Funcionario f){
+		funcionarios.add(f);
+	}
+
+	public void removerFuncionario(String nome){
+		boolean funcionarioRemovido = funcionarios.removeIf(a -> a.getNome().equalsIgnoreCase(nome));
+		if(funcionarioRemovido){
+			System.out.println("Funcionario removido com Sucesso: " + nome);
+		}
+	}
+
+	public Funcionario buscarFuncionario(int idFuncionario ){
+		return funcionarios.stream()
+				.filter(a -> a.getIdFuncionario() == idFuncionario)
+				.findFirst()
+				.orElse(null);
+	}
+
+	public void adicionarTreino(Treino treino) {
+    	treinosMap.put(treino.getIdTreino(), treino);
+	}
+
+	public void removerTreinos(int idTreino){
+		treinosMap.remove(idTreino);
+	}
+
+	public Treino buscarTreino(int id) {
+    	return treinosMap.get(id); 
+	}
+	
+	}
+

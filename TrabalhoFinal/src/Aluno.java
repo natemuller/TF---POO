@@ -8,28 +8,43 @@ public class Aluno extends Pessoa {
 
 	private int duracao;
 
+	private boolean emTreinamento;
+
+	public Aluno(String nome, String cpf, String dataNasc, int nroMatricula, Tipo tipo, String dataInicio, int duracao) {
+		super(nome, cpf, dataNasc);
+		this.nroMatricula = nroMatricula;
+		this.tipo = tipo;
+		this.dataInicio = dataInicio;
+		this.duracao = duracao;
+	}
+
+
 	public int getNroMatricula() {
-		return 0;
+		return this.nroMatricula;
 	}
 
 	public Tipo getTipo() {
-		return null;
+		return this.tipo;
 	}
 
 	public String getDataInicio() {
-		return null;
+		return this.dataInicio;
 	}
 
 	public int getDuracao() {
-		return 0;
+		return this.duracao;
+	}
+
+	public boolean getEmTreinamento() {
+		return this.emTreinamento;
+	}
+
+	public void setEmTreinamento(boolean emTreinamento) {
+		this.emTreinamento = emTreinamento;
 	}
 
 	public String toString() {
-		return null;
+		return "Aluno " + this.getNome() + "[Matricula: " + this.nroMatricula + ", tipo: " + this.tipo + ". Aluno desde: " + this.dataInicio
+				+ ", com plano de duracao: " + this.duracao + "]";
 	}
-
-	public void Aluno() {
-
-	}
-
 }

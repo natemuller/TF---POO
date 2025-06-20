@@ -6,20 +6,22 @@ public abstract class Pessoa {
 
 	private String dataNasc;
 
-	public void Pessoa() {
-
+	public Pessoa(String nome, String cpf, String dataNasc) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataNasc = dataNasc;
 	}
 
 	public String getNome() {
-		return null;
+		return this.nome;
 	}
 
 	public String getCpf() {
-		return null;
+		return this.cpf;
 	}
 
 	public String getDataNasc() {
-		return null;
+		return this.dataNasc;
 	}
 
 }

@@ -1,23 +1,15 @@
 public class FuncionarioCaixa extends Funcionario {
 
-	public String toString() {
-		return null;
+	public FuncionarioCaixa(String nome, String cpf, String dataNasc, int idFuncionario, String dataContratacao, Cargo cargo, boolean emAtendimento) {
+    	super(nome, cpf, dataNasc, idFuncionario, dataContratacao, cargo, emAtendimento);
 	}
 
-	public void cadastrarAluno() {
-
+	public void liberarEntrada(Aluno a) {
+		System.out.println("Aluno: " + a.getNome() + " liberado para entrada.");
+		a.setEmTreinamento(true);
 	}
 
-	public void liberarEntrada() {
-
+	public void consultarCadastro(Aluno a) {
+		System.out.println(a.toString());
 	}
-
-	public void consultarCadastro() {
-
-	}
-
-	public void FuncionarioCaixa() {
-
-	}
-
 }

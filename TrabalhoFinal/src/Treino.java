@@ -1,43 +1,51 @@
 public class Treino {
-
 	private int idTreino;
-
 	private String descricao;
-
 	private String data;
-
 	private double duracao;
-
 	private Aluno aluno;
-
 	private FuncionarioProfessor professor;
 
+	public Treino(int idTreino, String descricao, String data, double duracao, Aluno aluno, FuncionarioProfessor professor){
+		this.idTreino = idTreino;
+		this.descricao = descricao;
+		this.data = data;
+		this.duracao = duracao;
+		this.aluno = aluno;
+		this.professor = professor;
+	}
+
 	public int getIdTreino() {
-		return 0;
+		return idTreino;
 	}
 
 	public String getDescricao() {
-		return null;
+		return descricao;
 	}
 
 	public String getData() {
-		return null;
+		return data;
 	}
 
 	public double getDuracao() {
-		return 0;
+		return duracao;
 	}
 
 	public Aluno getAluno() {
-		return null;
+		return aluno;
+	}
+
+	public void atualizarDescricao(String novaDescricao){
+		
 	}
 
 	public FuncionarioProfessor getProfessor() {
-		return null;
+		return professor;
 	}
+	
 
-	public void Treino() {
-
+	@Override
+	public String toString(){
+		return "[ Treino ID: " + idTreino + " | Descricao: " + descricao + " Data: " + data + " Duracao: " + duracao + " ]";
 	}
-
 }

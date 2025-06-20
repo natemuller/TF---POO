@@ -1,4 +1,4 @@
-public class Funcionario extends Pessoa {
+public class Funcionario extends Pessoa implements Comparable<Funcionario> {
 
 	private int idFuncionario;
 
@@ -34,5 +34,10 @@ public class Funcionario extends Pessoa {
 
 	public void setEmAtendimento(boolean emAtendimento) {
 		this.emAtendimento = emAtendimento;
+	}
+
+	@Override
+	public int compareTo(Funcionario o) {
+		return this.getNome().compareTo(o.getNome());
 	}
 }

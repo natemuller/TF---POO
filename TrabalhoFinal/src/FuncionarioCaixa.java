@@ -12,4 +12,9 @@ public class FuncionarioCaixa extends Funcionario {
 	public void consultarCadastro(Aluno a) {
 		System.out.println(a.toString());
 	}
+
+	@Override
+	public String toString() {
+		return "Funcionario Caixa: " + this.getNome() + "[ID: " + this.getIdFuncionario() + ", Contratacao: " + this.getDataContratacao() + ", Cargo: " + this.getCargo() + "]";
+	}
 }

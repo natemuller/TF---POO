@@ -8,7 +8,14 @@ public class FuncionarioProfessor extends Funcionario {
 		System.out.println(t.toString());
 	}
 
-	public void atender() {
-
+	public void atender(Funcionario f, Aluno a) {
+		System.out.println("Funcionario: " + f.getNome() + " esta atendendo o aluno: " + a.getNome());
+		a.setEmTreinamento(true);
+		f.setEmAtendimento(true);
+	}
+	
+	@Override
+	public String toString() {
+		return "Funcionario Professor: " + this.getNome() + "[ID: " + this.getIdFuncionario() + ", Contratacao: " + this.getDataContratacao() + ", Cargo: " + this.getCargo() + "]";
 	}
 }

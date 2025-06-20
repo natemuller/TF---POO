@@ -1,6 +1,6 @@
 public class Teste {
     public static void main(String[] args) {
-        System.out.println("Olá, mundo!");
+        
         Academia academia = new Academia();
         Funcionario funcionario = new FuncionarioCaixa("Joaquim", "123.456.789-00", "01/01/2000", 1, "01/01/2021", Cargo.CAIXA, true);
         Funcionario funcionario2 = new FuncionarioProfessor("Adamastor", "123.456.789-00", "01/01/2000", 2, "01/01/2021", Cargo.PROFESSOR, true);
@@ -10,8 +10,21 @@ public class Teste {
         System.out.println(academia.buscarFuncionario(1).toString() + "\n");
         System.out.println(academia.buscarFuncionario(2).toString() + "\n");
         
+
+        //TestandoPessoa
         
-    
-    
+        //Testando treino...
+        Treino t1 = new Treino(1, "Peito");
+        Treino t2 = new Treino(2, "Bíceps");
+        Treino t3 = new Treino(3, "Costas");
+        Treino t4 = new Treino(4, "Perna");
+        Treino t5 = new Treino(5, "Ombro");
+        Treino t6 = new Treino(1, "Gluteos");
+
+
+
+        
+      
+
     }
 }

@@ -1,18 +1,15 @@
 public class Treino {
+	private int idCont = 1;
 	private int idTreino;
 	private String descricao;
 	private String data;
-	private double duracao;
+	private double horarioInicio;
 	private Aluno aluno;
 	private FuncionarioProfessor professor;
 
-	public Treino(int idTreino, String descricao, String data, double duracao, Aluno aluno, FuncionarioProfessor professor){
-		this.idTreino = idTreino;
+	public Treino(int idTreino, String descricao){
+		this.idTreino = idCont++;
 		this.descricao = descricao;
-		this.data = data;
-		this.duracao = duracao;
-		this.aluno = aluno;
-		this.professor = professor;
 	}
 
 	public int getIdTreino() {
@@ -27,8 +24,8 @@ public class Treino {
 		return data;
 	}
 
-	public double getDuracao() {
-		return duracao;
+	public double gethorarioInicio() {
+		return horarioInicio;
 	}
 
 	public Aluno getAluno() {
@@ -36,7 +33,7 @@ public class Treino {
 	}
 
 	public void atualizarDescricao(String novaDescricao){
-		
+		this.descricao = novaDescricao;
 	}
 
 	public FuncionarioProfessor getProfessor() {
@@ -46,6 +43,6 @@ public class Treino {
 
 	@Override
 	public String toString(){
-		return "[ Treino ID: " + idTreino + " | Descricao: " + descricao + " Data: " + data + " Duracao: " + duracao + " ]";
+		return "[ Treino ID: " + idTreino + " | Descricao: " + descricao + " Data: " + data + " horarioInicio: " + horarioInicio + " ]";
 	}
 }

@@ -11,7 +11,6 @@ public class Academia {
 
 	public Academia(){
 		treinosMap = new HashMap<>();
- 
 	}
 
 	public void adicionarAluno(Aluno a){

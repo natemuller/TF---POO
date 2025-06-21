@@ -2,16 +2,18 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Treino {
-	private int idCont = 1;
+	private static int idCont = 1;
 	private int idTreino;
 	private List<Exercicio> exercicios;
+	private String descricao;
 	private String data;
 	private double horarioInicio;
 	private Aluno aluno;
 	private FuncionarioProfessor professor;
 
-	public Treino(int idTreino, String descricao){
+	public Treino(String descricao) {
 		this.idTreino = idCont++;
+		this.descricao = descricao;
 		this.exercicios = new ArrayList<>();
 	}
 

@@ -41,6 +41,7 @@ public class TelaTesteSwing {
     }
 
     public static void abrirJanelaAluno(Academia academia) {
+        
         JFrame janelaDoAluno = new JFrame("Buscar Aluno");
         janelaDoAluno.setSize(400, 300);
         janelaDoAluno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

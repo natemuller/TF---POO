@@ -1,4 +1,4 @@
-public class Aluno extends Pessoa {
+public class Aluno extends Pessoa implements Comparable<Aluno> {
 
 	private int nroMatricula;
 	private String dataInicio;
@@ -29,5 +29,10 @@ public class Aluno extends Pessoa {
 	public String toString() {
 		return "Aluno " + this.getNome() + "[Matricula: " + this.nroMatricula +  ". Aluno desde: " + this.dataInicio
 				+ ", com plano de duracao: " +   "]";
+	}
+
+	@Override
+	public int compareTo(Aluno a) {
+		return this.getNroMatricula() - a.getNroMatricula();
 	}
 }

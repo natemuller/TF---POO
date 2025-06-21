@@ -10,7 +10,6 @@ public class FuncionarioProfessor extends Funcionario {
 
 	public void atender(Funcionario f, Aluno a) {
 		System.out.println("Funcionario: " + f.getNome() + " esta atendendo o aluno: " + a.getNome());
-		a.setEmTreinamento(true);
 		f.setEmAtendimento(true);
 	}
 	

@@ -26,9 +26,9 @@ public class Academia {
 		}
 	}
 
-	public Aluno buscarAluno(int nroMatricula){
+	public Aluno buscarAluno(String nomeString){
 		return alunos.stream()
-				.filter(a -> a.getNroMatricula() == nroMatricula)
+				.filter(a -> a.getNome().equalsIgnoreCase(nomeString))
 				.findFirst()
 				.orElse(null);
 	}

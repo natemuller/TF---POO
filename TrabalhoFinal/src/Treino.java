@@ -31,11 +31,6 @@ public class Treino {
 	public Aluno getAluno() {
 		return aluno;
 	}
-
-	public void atualizarDescricao(String novaDescricao){
-		this.descricao = novaDescricao;
-	}
-
 	public FuncionarioProfessor getProfessor() {
 		return professor;
 	}

@@ -1,9 +1,7 @@
 public abstract class Pessoa {
 
 	private String nome;
-
 	private String cpf;
-
 	private String dataNasc;
 
 	public Pessoa(String nome, String cpf, String dataNasc) {

@@ -1,7 +1,10 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Treino {
 	private int idCont = 1;
 	private int idTreino;
-	private String descricao;
+	private List<Exercicio> exercicios;
 	private String data;
 	private double horarioInicio;
 	private Aluno aluno;
@@ -9,15 +12,19 @@ public class Treino {
 
 	public Treino(int idTreino, String descricao){
 		this.idTreino = idCont++;
-		this.descricao = descricao;
+		this.exercicios = new ArrayList<>();
 	}
 
 	public int getIdTreino() {
 		return idTreino;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public List<Exercicio> getExercicios() {
+		return exercicios;
+	}
+
+	public void adicionarExercicio(Exercicio exercicio) {
+		exercicios.add(exercicio);
 	}
 
 	public String getData() {
@@ -37,7 +44,11 @@ public class Treino {
 	
 
 	@Override
-	public String toString(){
-		return "[ Treino ID: " + idTreino + " | Descricao: " + descricao + " ]";
+	public String toString() {
+		String treino = "ID: " + this.idTreino + "\nExercicios: ";
+		for (Exercicio e : this.exercicios) {
+			treino += e.toString() + "\n";
+		}
+		return treino;
 	}
 }

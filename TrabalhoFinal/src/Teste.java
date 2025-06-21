@@ -21,7 +21,12 @@ public class Teste {
         Treino t5 = new Treino(5, "Ombro");
         Treino t6 = new Treino(1, "Gluteos");
 
-
+        System.out.println("Tipos de treinos")
+        System.out.println(t1);        
+        System.out.println(t2);
+        System.out.println(t3);
+        System.out.println(t4);
+        System.out.println(t5);
 
         
       

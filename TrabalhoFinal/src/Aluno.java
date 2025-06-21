@@ -1,21 +1,15 @@
 public class Aluno extends Pessoa {
 
 	private int nroMatricula;
-
 	private Tipo tipo;
-
 	private String dataInicio;
-
-	private int duracao;
-
 	private boolean emTreinamento;
 
-	public Aluno(String nome, String cpf, String dataNasc, int nroMatricula, Tipo tipo, String dataInicio, int duracao) {
+	public Aluno(String nome, String cpf, String dataNasc, int nroMatricula, Tipo tipo, String dataInicio) {
 		super(nome, cpf, dataNasc);
 		this.nroMatricula = nroMatricula;
 		this.tipo = tipo;
 		this.dataInicio = dataInicio;
-		this.duracao = duracao;
 	}
 
 
@@ -31,10 +25,6 @@ public class Aluno extends Pessoa {
 		return this.dataInicio;
 	}
 
-	public int getDuracao() {
-		return this.duracao;
-	}
-
 	public boolean getEmTreinamento() {
 		return this.emTreinamento;
 	}
@@ -45,6 +35,6 @@ public class Aluno extends Pessoa {
 
 	public String toString() {
 		return "Aluno " + this.getNome() + "[Matricula: " + this.nroMatricula + ", tipo: " + this.tipo + ". Aluno desde: " + this.dataInicio
-				+ ", com plano de duracao: " + this.duracao + "]";
+				+ ", com plano de duracao: " +   "]";
 	}
 }

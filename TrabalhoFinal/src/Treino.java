@@ -43,6 +43,6 @@ public class Treino {
 
 	@Override
 	public String toString(){
-		return "[ Treino ID: " + idTreino + " | Descricao: " + descricao + " Data: " + data + " horarioInicio: " + horarioInicio + " ]";
+		return "[ Treino ID: " + idTreino + " | Descricao: " + descricao + " ]";
 	}
 }

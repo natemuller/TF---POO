@@ -1,8 +1,12 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Aluno extends Pessoa implements Comparable<Aluno> {
 
 	private int nroMatricula;
 	private String dataInicio;
 	private boolean emTreinamento;
+	private List<Treino> treinos = new ArrayList<>();
 
 	public Aluno(String nome, String cpf, String dataNasc, int nroMatricula, String dataInicio) {
 		super(nome, cpf, dataNasc);
@@ -26,9 +30,21 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 		this.emTreinamento = emTreinamento;
 	}
 
+	public List<Treino> getTreinos() {
+		return this.treinos;
+	}
+
+	public void adicionarTreino(Treino treino) {
+		this.treinos.add(treino);
+	}
+
 	public String toString() {
 		return "Aluno " + this.getNome() + "[Matricula: " + this.nroMatricula +  ". Aluno desde: " + this.dataInicio
 				+ ", com plano de duracao: " +   "]";
+	}
+
+	public Exercicio getExercicioMaisPesado() {
+		return null;
 	}
 
 	@Override

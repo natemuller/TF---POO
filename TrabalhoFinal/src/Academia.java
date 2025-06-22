@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -61,6 +63,16 @@ public class Academia {
 
 	public Treino buscarTreino(int id) {
     	return treinosMap.get(id); 
+	}
+
+	public List<Treino> getTreinosDoDia(String data) {
+		List<Treino> resultado = new ArrayList<>();
+		for (Aluno aluno : alunos) {
+			aluno.getTreinos().stream()
+					.filter(t -> data.equals(t.getData()))
+					.forEach(resultado::add);
+		}
+		return resultado;
 	}
 	
 	}

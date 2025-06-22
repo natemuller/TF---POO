@@ -34,6 +34,9 @@ public class Exercicio {
         return this.carga;
     }
 
+    public void setCarga(double carga) {
+        this.carga = carga;
+    }
     @Override
     public String toString() {
         return "Exercício: " + nome + " | Séries: " + series + " | Repetições: " + repeticoes + " | Carga: " + carga + "kg";

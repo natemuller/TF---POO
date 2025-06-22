@@ -43,7 +43,24 @@ public class Treino {
 	public FuncionarioProfessor getProfessor() {
 		return professor;
 	}
-	
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public double calculoMediaCarga() {
+		return exercicios.stream()
+				.mapToDouble(Exercicio::getCarga)
+				.average()
+				.orElse(0.0);
+	}
+
+	public double calculoCargaTotalDoTreino() {
+		// Nesse caso, seria a carga total que o aluno ergueu no treino, contando cada repetição realizada.
+		return exercicios.stream()
+				.mapToDouble(Exercicio::getCarga)
+				.sum();
+	}
 
 	@Override
 	public String toString() {

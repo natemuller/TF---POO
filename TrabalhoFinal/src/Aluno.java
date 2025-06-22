@@ -49,6 +49,6 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 
 	@Override
 	public int compareTo(Aluno a) {
-		return this.getNroMatricula() - a.getNroMatricula();
+    	return Integer.compare(this.getNroMatricula(), a.getNroMatricula());
 	}
 }

@@ -12,11 +12,28 @@ public class Teste {
         System.out.println(academia.buscarFuncionario(2).toString() + "\n");
         
 
-        //TestandoPessoa
-
+        
         //TestandoAluno
         Aluno aluno1 = new Aluno("Natan", "879.953.959-04", "20/08/2004", 2002502, "25/02/2020");
+        Aluno aluno2 = new Aluno("Emile", "896.852.585-96", "25/11/2002", 2555050, "20/09/2024");
+        Aluno aluno3 = new Aluno("Lucas", "123.456.789-00", "10/03/2003", 2010301, "15/03/2022");
+        Aluno aluno4 = new Aluno("Mariana", "321.654.987-11", "05/07/2005", 2021402, "10/08/2023");
+        Aluno aluno5 = new Aluno("Gabriel", "789.456.123-22", "12/12/2001", 1999803, "05/01/2021");
+        Aluno aluno6 = new Aluno("Fernanda", "654.789.321-33", "30/09/2004", 2004505, "01/06/2022");
+        Aluno aluno7 = new Aluno("Bruno", "987.321.654-44", "01/01/2002", 2011106, "12/12/2021");
+
         academia.adicionarAluno(aluno1);
+        academia.adicionarAluno(aluno2);
+        academia.adicionarAluno(aluno3);
+        academia.adicionarAluno(aluno4);
+        academia.adicionarAluno(aluno5);
+        academia.adicionarAluno(aluno6);
+        academia.adicionarAluno(aluno7);
+           System.out.println("Alunos cadastrados na academia:");
+        for (Aluno a : academia.getAlunos()) {
+            System.out.println("- " + a.getNome());
+        }
+        
 
         //Testando treino...
         Treino t1 = new Treino("Peitoral");

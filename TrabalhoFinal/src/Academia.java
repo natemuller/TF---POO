@@ -1,79 +1,84 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Academia {
-
     private Map<Integer, Treino> treinosMap;
-	private Set<Funcionario> funcionarios = new TreeSet<>();
-	private Set<Aluno> alunos = new TreeSet<>();
+    private Set<Funcionario> funcionarios = new TreeSet<>();
+    private Set<Aluno> alunos = new TreeSet<>();
 
-	public Academia(){
-		treinosMap = new HashMap<>();
-	}
+    public Academia() {
+        treinosMap = new HashMap<>();
+    }
 
-	public void adicionarAluno(Aluno a){
-		alunos.add(a);
-	}
-	
-	public void removerAluno(String nome){
-		boolean removido = alunos.removeIf(a -> a.getNome().equals(nome));
-		if(removido){
-			System.out.println("Aluno Removido com Sucesso: " + nome);
-		} else{
-			System.out.println("Aluno não encontrado nos dados da academia;");
-		}
-	}
+    public void adicionarAluno(Aluno a) {
+        alunos.add(a);
+    }
 
-	public Aluno buscarAluno(String nomeString){
-		return alunos.stream()
-				.filter(a -> a.getNome().equalsIgnoreCase(nomeString))
-				.findFirst()
-				.orElse(null);
-	}
+    public Set<Aluno> getAlunos() {
+        return alunos;
+    }
 
-	public void adicionarFuncionario(Funcionario f){
-		funcionarios.add(f);
-	}
+    public void removerAluno(String nome) {
+        boolean removido = alunos.removeIf(a -> a.getNome().equals(nome));
+        if (removido) {
+            System.out.println("Aluno removido com sucesso: " + nome);
+        } else {
+            System.out.println("Aluno não encontrado nos dados da academia.");
+        }
+    }
 
-	public void removerFuncionario(String nome){
-		boolean funcionarioRemovido = funcionarios.removeIf(a -> a.getNome().equalsIgnoreCase(nome));
-		if(funcionarioRemovido){
-			System.out.println("Funcionario removido com Sucesso: " + nome);
-		}
-	}
+    public Aluno buscarAluno(String nomeString) {
+        return alunos.stream()
+            .filter(a -> a.getNome().equalsIgnoreCase(nomeString.trim()))
+            .findFirst()
+            .orElse(null);
+    }
 
-	public Funcionario buscarFuncionario(int idFuncionario ){
-		return funcionarios.stream()
-				.filter(a -> a.getIdFuncionario() == idFuncionario)
-				.findFirst()
-				.orElse(null);
-	}
+    public void adicionarFuncionario(Funcionario f) {
+        funcionarios.add(f);
+    }
 
-	public void adicionarTreino(Treino treino) {
-    	treinosMap.put(treino.getIdTreino(), treino);
-	}
+    public void removerFuncionario(String nome) {
+        boolean removido = funcionarios.removeIf(f -> f.getNome().equalsIgnoreCase(nome));
+        if (removido) {
+            System.out.println("Funcionário removido com sucesso: " + nome);
+        }
+    }
 
-	public void removerTreinos(int idTreino){
-		treinosMap.remove(idTreino);
-	}
+    public Funcionario buscarFuncionario(int idFuncionario) {
+        return funcionarios.stream()
+            .filter(f -> f.getIdFuncionario() == idFuncionario)
+            .findFirst()
+            .orElse(null);
+    }
 
-	public Treino buscarTreino(int id) {
-    	return treinosMap.get(id); 
-	}
+    public Map<Integer, Treino> getTreinosMap() {
+        return treinosMap;
+    }
 
-	public List<Treino> getTreinosDoDia(String data) {
-		List<Treino> resultado = new ArrayList<>();
-		for (Aluno aluno : alunos) {
-			aluno.getTreinos().stream()
-					.filter(t -> data.equals(t.getData()))
-					.forEach(resultado::add);
-		}
-		return resultado;
-	}
-	
-	}
+    public void adicionarTreino(Treino treino) {
+        treinosMap.put(treino.getIdTreino(), treino);
+    }
 
+    public void removerTreinos(int idTreino) {
+        treinosMap.remove(idTreino);
+    }
+
+    public Treino buscarTreino(int id) {
+        return treinosMap.get(id);
+    }
+
+    public List<Treino> getTreinosDoDia(String data) {
+        List<Treino> resultado = new ArrayList<>();
+        for (Aluno aluno : alunos) {
+            aluno.getTreinos().stream()
+                .filter(t -> data.equals(t.getData()))
+                .forEach(resultado::add);
+        }
+        return resultado;
+    }
+
+    // Novo método auxiliar, se quiser
+    public List<Treino> getListaTreinosAcademia() {
+        return new ArrayList<>(treinosMap.values());
+    }
+}

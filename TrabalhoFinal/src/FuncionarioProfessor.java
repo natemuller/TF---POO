@@ -15,6 +15,6 @@ public class FuncionarioProfessor extends Funcionario {
 	
 	@Override
 	public String toString() {
-		return "Funcionario Professor: " + this.getNome() + "[ID: " + this.getIdFuncionario() + ", Contratacao: " + this.getDataContratacao() + ", Cargo: " + this.getCargo() + "]";
+		return "Funcionario Professor: " + this.getNome() + "[CPF: " + this.getCpf() + ", Data de Nascimento: " + this.getDataNasc() + ". ID: " + this.getIdFuncionario() + ", Contratacao: " + this.getDataContratacao() + ", Cargo: " + this.getCargo() + "]";
 	}
 }

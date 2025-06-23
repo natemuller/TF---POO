@@ -56,7 +56,7 @@ public class Treino {
 	}
 
 	public double calculoCargaTotalDoTreino() {
-		// Nesse caso, seria a carga total que o aluno ergueu no treino, contando cada repetição realizada.
+		// Nesse caso, seria a carga total que o aluno ergueu no treino, contando cada repetição e série realizada.
 		return exercicios.stream()
 				.mapToDouble(Exercicio::getCarga)
 				.sum();
@@ -64,7 +64,7 @@ public class Treino {
 
 	@Override
 	public String toString() {
-		String treino = "ID: " + this.idTreino + "\nExercicios: ";
+		String treino = "ID: " + this.idTreino + "\nDescricao: " + this.descricao + "\nExercicios: ";
 		for (Exercicio e : this.exercicios) {
 			treino += e.toString() + "\n";
 		}

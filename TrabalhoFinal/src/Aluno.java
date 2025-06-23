@@ -38,11 +38,6 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 		this.treinos.add(treino);
 	}
 
-	public String toString() {
-		return "Aluno " + this.getNome() + "[Matricula: " + this.nroMatricula +  ". Aluno desde: " + this.dataInicio
-				+ ", com plano de duracao: " +   "]";
-	}
-
 	public Exercicio getExercicioMaisPesado() {
 		List<Exercicio> todosExerciciosFeitos = new ArrayList();
 		for(Treino treino : treinos) {
@@ -64,5 +59,9 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 	@Override
 	public int compareTo(Aluno a) {
     	return Integer.compare(this.getNroMatricula(), a.getNroMatricula());
+	}
+	public String toString() {
+		return "Aluno " + this.getNome() + "[CPF: " + this.getCpf() + ", Data de Nascimento: " + this.getDataNasc() + " . Matricula: " + this.nroMatricula +  ". Aluno desde: " + this.dataInicio
+				+ ", com plano de duracao: " +   "]";
 	}
 }

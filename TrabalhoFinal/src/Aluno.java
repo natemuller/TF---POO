@@ -44,7 +44,21 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 	}
 
 	public Exercicio getExercicioMaisPesado() {
-		return null;
+		List<Exercicio> todosExerciciosFeitos = new ArrayList();
+		for(Treino treino : treinos) {
+			todosExerciciosFeitos.addAll(treino.getExercicios());
+		}
+		return todosExerciciosFeitos.stream()
+				.max((e1, e2) -> {
+					if (e1.getCarga() > e2.getCarga()) {
+						return 1;
+					} else if (e1.getCarga() < e2.getCarga()) {
+						return -1;
+					} else {
+						return 0;
+					}
+				})
+				.orElse(null);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 public class InterfaceAluno extends JFrame {
 
@@ -33,6 +34,11 @@ public class InterfaceAluno extends JFrame {
         botaoTreinar.setVisible(false);
         janelaAluno.add(botaoTreinar);
 
+        JButton botaoVoltar = new JButton("Voltar");
+        botaoVoltar.addActionListener(e -> {
+            janelaAluno.setVisible(false);
+            interfacePrincipal.setVisible(true);
+        });
 
         final Aluno[] alunoAtual = new Aluno[1];
         
@@ -62,17 +68,18 @@ public class InterfaceAluno extends JFrame {
         //O maldito trecho acima adiciona um campo para o Aluno que acessou digitar sua matrícula e, realiza verificação.
         botaoTreinar.addActionListener (ev -> {
             if (alunoAtual[0] != null) {
-                exibirJanelaTreino(academia, alunoAtual[0]);
+                exibirJanelaTreino(academia, alunoAtual[0], interfacePrincipal);
             }
         });
 
         janelaAluno.add(campoMatricula);
         janelaAluno.add(botaoBuscar);
+        janelaAluno.add(botaoVoltar);
 
         janelaAluno.setVisible(true);
     }
 
-    public static void exibirJanelaTreino(Academia academia, Aluno aluno) {
+    public static void exibirJanelaTreino(Academia academia, Aluno aluno, JFrame interfacePrincipal) {
 
         JFrame janelaTreino = new JFrame ("Aba de treinos.");
         janelaTreino.setSize(600, 500);
@@ -84,6 +91,55 @@ public class InterfaceAluno extends JFrame {
         tituloInterno.setFont(new Font("Times New Roman", Font.BOLD, 22)); 
         tituloInterno.setForeground(new Color(0, 102, 204));
         janelaTreino.add(tituloInterno);
+
+        JLabel mensagem = new JLabel("Selecione o treino que deseja realizar: ");
+        mensagem.setFont(new Font("Times New Roman", Font.BOLD, 16)); 
+        mensagem.setForeground(new Color(0, 102, 204));
+        janelaTreino.add(mensagem);
+
+        DefaultListModel<String> treinos = new DefaultListModel<>();
+        List<Treino> treinosDoAluno = aluno.getTreinos();
+
+        for (Treino treino : treinosDoAluno) {
+            treinos.addElement(treino.getDescricao());
+        }
+
+        JList<String> listaTreinos = new JList<>(treinos);
+        JScrollPane scrollPane = new JScrollPane(listaTreinos);
+        janelaTreino.add(scrollPane);
+
+        JButton botaoIniciarTreino = new JButton("Iniciar treino");
+        botaoIniciarTreino.addActionListener(e ->  {
+            String treinoEscolhido = listaTreinos.getSelectedValue();
+            if (treinoEscolhido == null) {
+                JOptionPane.showMessageDialog(null, "Selecione um treino.");
+            }
+            else {
+                Treino treinoCompleto = null;
+                for (Treino treino : treinosDoAluno) {
+                    if (treino.getDescricao().equals(treinoEscolhido)) {
+                        treinoCompleto = treino;
+                        break;
+                    }
+                }
+                exibirJanelaExercicios(academia, treinoCompleto, interfacePrincipal);
+            }
+        });
+
+        janelaTreino.add(botaoIniciarTreino);
+
+        JButton botaoVoltar = new JButton("Voltar");
+        botaoVoltar.addActionListener(e -> {
+            janelaTreino.setVisible(false);
+            interfacePrincipal.setVisible(true);
+        });
+
+        janelaTreino.add(botaoVoltar);
+        janelaTreino.setVisible(true);
+
+    }
+
+    public static void exibirJanelaExercicios(Academia academia, Treino treino, JFrame interfacePrincipal) {
 
     }
 }

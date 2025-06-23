@@ -126,7 +126,15 @@ public class Teste {
            academia.adicionarTreino(t5);
 
            aluno1.setEmTreinamento(true);
-        
+
+        //Adicionando os treinos em todos os alunos:
+        for (Aluno a : academia.getAlunos()) {
+            a.adicionarTreino(t1);
+            a.adicionarTreino(t2);
+            a.adicionarTreino(t3);
+            a.adicionarTreino(t4);
+            a.adicionarTreino(t5);
+        }
 
         //  chama o método que cria a janela principal, passando a academia
         InterfacePrincipal.exibirJanelaPrincipal(academia);

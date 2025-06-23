@@ -7,7 +7,7 @@ public class Treino {
 	private List<Exercicio> exercicios;
 	private String descricao;
 	private String data;
-	private double horarioInicio;
+	private String horarioInicio;
 	private Aluno aluno;
 	private FuncionarioProfessor professor;
 
@@ -33,7 +33,7 @@ public class Treino {
 		return data;
 	}
 
-	public double gethorarioInicio() {
+	public String gethorarioInicio() {
 		return horarioInicio;
 	}
 

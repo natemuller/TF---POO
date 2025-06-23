@@ -39,7 +39,7 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 	}
 
 	public Exercicio getExercicioMaisPesado() {
-		List<Exercicio> todosExerciciosFeitos = new ArrayList();
+		List<Exercicio> todosExerciciosFeitos = new ArrayList<>();
 		for(Treino treino : treinos) {
 			todosExerciciosFeitos.addAll(treino.getExercicios());
 		}

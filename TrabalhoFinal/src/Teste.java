@@ -124,9 +124,11 @@ public class Teste {
            academia.adicionarTreino(t3);
            academia.adicionarTreino(t4);
            academia.adicionarTreino(t5);
+
+           aluno1.setEmTreinamento(true);
         
 
         //  chama o método que cria a janela principal, passando a academia
-        TelaTesteSwing.exibirJanelaPrincipal(academia);
+        InterfacePrincipal.exibirJanelaPrincipal(academia);
     }
     }

@@ -1,0 +1,89 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class InterfaceAluno extends JFrame {
+
+    private Academia academia;
+    private JFrame interfacePrincipal;
+
+    public InterfaceAluno(Academia academia, JFrame interfacePrincipal) {
+        this.academia = academia;
+        this.interfacePrincipal = interfacePrincipal;
+    }
+
+    public static void exibirJanelaAluno(Academia academia, JFrame interfacePrincipal) {
+        
+        JFrame janelaAluno = new JFrame ("Modo aluno");
+        janelaAluno.setSize(600, 500);
+        janelaAluno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janelaAluno.setLocationRelativeTo(null);
+        janelaAluno.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40));  
+
+        JLabel tituloInterno = new JLabel("Olá aluno! Digite a sua matrícula no campo abaixo: "); 
+        tituloInterno.setFont(new Font("Times New Roman", Font.BOLD, 22)); 
+        tituloInterno.setForeground(new Color(0, 102, 204));
+        janelaAluno.add(tituloInterno);
+
+        JTextField campoMatricula = new JTextField(20);
+        JButton botaoBuscar = new JButton("Buscar"); 
+        janelaAluno.add(botaoBuscar);
+
+        JButton botaoTreinar = new JButton ("Treinar.");
+        botaoTreinar.setVisible(false);
+        janelaAluno.add(botaoTreinar);
+
+
+        final Aluno[] alunoAtual = new Aluno[1];
+        
+        botaoBuscar.addActionListener(e -> {
+            try {
+                int matricula = Integer.parseInt(campoMatricula.getText().trim());
+                Aluno aluno = academia.buscarAluno(matricula);
+                if (aluno == null) {
+                    JOptionPane.showMessageDialog(null, "Aluno nao encontrado. Tente novamente.");
+                    botaoTreinar.setVisible(false);
+                } 
+                else if (aluno.getEmTreinamento() == false) {
+                    JOptionPane.showMessageDialog(null, "Aluno não teve sua entrada liberada. Tente novamente.");
+                    botaoTreinar.setVisible(false);
+                } 
+                else {
+                    JOptionPane.showMessageDialog(null, "Aluno encontrado: " + aluno.getNome());
+                    alunoAtual[0] = aluno;
+                    botaoTreinar.setVisible(true);
+                }
+            }
+            catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Digite uma matricula valida. Somente números");
+                botaoTreinar.setVisible(false);
+            }
+        });     
+        //O maldito trecho acima adiciona um campo para o Aluno que acessou digitar sua matrícula e, realiza verificação.
+        botaoTreinar.addActionListener (ev -> {
+            if (alunoAtual[0] != null) {
+                exibirJanelaTreino(academia, alunoAtual[0]);
+            }
+        });
+
+        janelaAluno.add(campoMatricula);
+        janelaAluno.add(botaoBuscar);
+
+        janelaAluno.setVisible(true);
+    }
+
+    public static void exibirJanelaTreino(Academia academia, Aluno aluno) {
+
+        JFrame janelaTreino = new JFrame ("Aba de treinos.");
+        janelaTreino.setSize(600, 500);
+        janelaTreino.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janelaTreino.setLocationRelativeTo(null);
+        janelaTreino.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40));
+
+        JLabel tituloInterno = new JLabel("Bem-vindo a nossa área de treinamento, " + aluno.getNome() + "!");
+        tituloInterno.setFont(new Font("Times New Roman", Font.BOLD, 22)); 
+        tituloInterno.setForeground(new Color(0, 102, 204));
+        janelaTreino.add(tituloInterno);
+
+    }
+}

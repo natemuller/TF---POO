@@ -20,7 +20,7 @@ public class Teste {
         Funcionario funcionario5 = new FuncionarioProfessor("Jorge", "123.222.789-00", "01/11/2001", 5, "01/01/2021", Cargo.PROFESSOR, true);
         Funcionario funcionario6 = new FuncionarioProfessor("Adamastor", "111.456.789-00", "01/01/2007", 6, "01/01/2021", Cargo.PROFESSOR, true);
         Funcionario funcionario7 = new FuncionarioProfessor("Paulo", "123.456.789-22", "20/08/2000", 7, "01/01/2021", Cargo.PROFESSOR, true);
-        Funcionario funcionario8 = new FuncionarioProfessor("Joaquim", "123.222.789-00", "20/03/2000", 8, "01/01/2021", Cargo.PROFESSOR, true);
+        Funcionario funcionario8 = new FuncionarioProfessor("Joaquina", "123.222.789-00", "20/03/2000", 8, "01/01/2021", Cargo.PROFESSOR, true);
         
         academia.adicionarFuncionario(funcionario5);
         academia.adicionarFuncionario(funcionario6);

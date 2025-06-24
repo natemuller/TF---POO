@@ -41,7 +41,7 @@ public class InterfaceAdministrador extends JFrame {
                 }
             }
             catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Senha incorreta. Tente novamente.");
+                JOptionPane.showMessageDialog(null, "Formato de senha incorreto.");
             }
         });
 

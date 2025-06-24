@@ -27,6 +27,7 @@ public class InterfaceAluno extends JFrame {
         janelaAluno.add(tituloInterno);
 
         JTextField campoMatricula = new JTextField(20);
+        
         JButton botaoBuscar = new JButton("Buscar"); 
         janelaAluno.add(botaoBuscar);
 
@@ -65,7 +66,7 @@ public class InterfaceAluno extends JFrame {
                 botaoTreinar.setVisible(false);
             }
         });     
-        //O maldito trecho acima adiciona um campo para o Aluno que acessou digitar sua matrícula e, realiza verificação.
+ 
         botaoTreinar.addActionListener (ev -> {
             if (alunoAtual[0] != null) {
                 exibirJanelaTreino(academia, alunoAtual[0], interfacePrincipal);
@@ -97,36 +98,8 @@ public class InterfaceAluno extends JFrame {
         mensagem.setForeground(new Color(0, 102, 204));
         janelaTreino.add(mensagem);
 
-        DefaultListModel<String> treinos = new DefaultListModel<>();
-        List<Treino> treinosDoAluno = aluno.getTreinos();
-
-        for (Treino treino : treinosDoAluno) {
-            treinos.addElement(treino.getDescricao());
-        }
-
-        JList<String> listaTreinos = new JList<>(treinos);
-        JScrollPane scrollPane = new JScrollPane(listaTreinos);
-        janelaTreino.add(scrollPane);
-
-        JButton botaoIniciarTreino = new JButton("Iniciar treino");
-        botaoIniciarTreino.addActionListener(e ->  {
-            String treinoEscolhido = listaTreinos.getSelectedValue();
-            if (treinoEscolhido == null) {
-                JOptionPane.showMessageDialog(null, "Selecione um treino.");
-            }
-            else {
-                Treino treinoCompleto = null;
-                for (Treino treino : treinosDoAluno) {
-                    if (treino.getDescricao().equals(treinoEscolhido)) {
-                        treinoCompleto = treino;
-                        break;
-                    }
-                }
-                exibirJanelaExercicios(academia, treinoCompleto, interfacePrincipal);
-            }
-        });
-
-        janelaTreino.add(botaoIniciarTreino);
+        JButton botaoTreinar = new JButton("Treinar");
+        botaoTreinar.setVisible(true);
 
         JButton botaoVoltar = new JButton("Voltar");
         botaoVoltar.addActionListener(e -> {
@@ -135,11 +108,13 @@ public class InterfaceAluno extends JFrame {
         });
 
         janelaTreino.add(botaoVoltar);
+        janelaTreino.add(botaoTreinar);
         janelaTreino.setVisible(true);
 
     }
 
     public static void exibirJanelaExercicios(Academia academia, Treino treino, JFrame interfacePrincipal) {
-
+        //Neste método, preciso que o aluno selecione o treino que deseja fazer em uma lista, em seguida, vai solicitar para ele
+        //o peso que será utilizado em qualquer um, logo após, abrir um painel de estatística.
     }
 }

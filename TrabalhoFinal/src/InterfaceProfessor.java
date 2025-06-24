@@ -15,7 +15,7 @@ public class InterfaceProfessor extends JFrame {
     public static void exibirJanelaProfessor(Academia academia, JFrame interfacePrincipal) {
 
         JFrame janelaProfessor = new JFrame("Modo professor.");
-        janelaProfessor.setSize(600, 500);
+        janelaProfessor.setSize(800, 700);
         janelaProfessor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaProfessor.setLocationRelativeTo(null);
         janelaProfessor.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40)); 
@@ -75,7 +75,7 @@ public class InterfaceProfessor extends JFrame {
     public static void exibeTelaAtendimento(Academia academia, JFrame interfacePrincipal) {
 
         JFrame telaAtendimento = new JFrame("Tela de atendimento.");
-        telaAtendimento.setSize(600, 500);
+        telaAtendimento.setSize(800, 700);
         telaAtendimento.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         telaAtendimento.setLocationRelativeTo(null);
         telaAtendimento.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40)); 

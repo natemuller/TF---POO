@@ -39,6 +39,6 @@ public class Exercicio {
     }
     @Override
     public String toString() {
-        return "Exercício: " + nome + " | Séries: " + series + " | Repetições: " + repeticoes + " | Carga: " + carga + "kg";
+        return "Exercício: " + nome + " | Séries: " + series + " | Repetições: " + repeticoes + ". ";
     }
 }

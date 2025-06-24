@@ -58,10 +58,9 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 
 	@Override
 	public int compareTo(Aluno a) {
-    	return Integer.compare(this.getNroMatricula(), a.getNroMatricula());
+    	return this.getNome().compareTo(a.getNome());
 	}
 	public String toString() {
-		return "Aluno " + this.getNome() + "[CPF: " + this.getCpf() + ", Data de Nascimento: " + this.getDataNasc() + " . Matricula: " + this.nroMatricula +  ". Aluno desde: " + this.dataInicio
-				+ ", com plano de duracao: " +   "]";
+		return "Aluno " + this.getNome() + "[CPF: " + this.getCpf() + ", Data de Nascimento: " + this.getDataNasc() + " . Matricula: " + this.nroMatricula +  ". Aluno desde: " + this.dataInicio +   "]";
 	}
 }

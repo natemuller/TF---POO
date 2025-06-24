@@ -9,7 +9,7 @@ public class InterfacePrincipal extends JFrame {
     public static void exibirJanelaPrincipal(Academia academia) {
         
         JFrame janelaPrincipal = new JFrame("Sistema gerenciador de academia.");
-        janelaPrincipal.setSize(600, 500);
+        janelaPrincipal.setSize(800, 700);
         janelaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaPrincipal.setLocationRelativeTo(null);
         janelaPrincipal.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40));        

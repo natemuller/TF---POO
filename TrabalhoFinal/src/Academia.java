@@ -17,6 +17,10 @@ public class Academia {
         return alunos;
     }
 
+    public Set<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
     public void removerAluno(String nome) {
         boolean removido = alunos.removeIf(a -> a.getNome().equals(nome));
         if (removido) {
@@ -65,16 +69,6 @@ public class Academia {
 
     public Treino buscarTreino(int id) {
         return treinosMap.get(id);
-    }
-
-    public List<Treino> getTreinosDoDia(String data) {
-        List<Treino> resultado = new ArrayList<>();
-        for (Aluno aluno : alunos) {
-            aluno.getTreinos().stream()
-                .filter(t -> data.equals(t.getData()))
-                .forEach(resultado::add);
-        }
-        return resultado;
     }
 
     // Novo método auxiliar, se quiser

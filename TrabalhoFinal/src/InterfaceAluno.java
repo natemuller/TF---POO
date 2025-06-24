@@ -16,7 +16,7 @@ public class InterfaceAluno extends JFrame {
     public static void exibirJanelaAluno(Academia academia, JFrame interfacePrincipal) {
         
         JFrame janelaAluno = new JFrame ("Modo aluno");
-        janelaAluno.setSize(600, 500);
+        janelaAluno.setSize(800, 700);
         janelaAluno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaAluno.setLocationRelativeTo(null);
         janelaAluno.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40));  
@@ -83,7 +83,7 @@ public class InterfaceAluno extends JFrame {
     public static void exibirJanelaTreino(Academia academia, Aluno aluno, JFrame interfacePrincipal) {
 
         JFrame janelaTreino = new JFrame ("Aba de treinos.");
-        janelaTreino.setSize(600, 500);
+        janelaTreino.setSize(800, 700);
         janelaTreino.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaTreino.setLocationRelativeTo(null);
         janelaTreino.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40));
@@ -112,8 +112,7 @@ public class InterfaceAluno extends JFrame {
         botaoComecarTreino.setVisible(true);
 
         botaoComecarTreino.addActionListener(e -> {
-            //Precisamos comparar o treino escolhido (a descrição que aparece na tela) com a descricao dos treinos da nossa lista pre-definida,
-            //assim, comparamos, pegamos o ID do treino com mesma descrição e, passamos como parametro pra chamar o metodo exibirJanelaExercicios().
+            
         });
 
 
@@ -134,7 +133,7 @@ public class InterfaceAluno extends JFrame {
         //o peso que será utilizado em qualquer um, logo após, abrir um painel de estatística.
 
         JFrame janelaExercicios = new JFrame ("Exercicios do treino de " + treino.getDescricao() + ".");
-        janelaExercicios.setSize(600, 500);
+        janelaExercicios.setSize(800, 700);
         janelaExercicios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaExercicios.setLocationRelativeTo(null);
         janelaExercicios.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40)); 

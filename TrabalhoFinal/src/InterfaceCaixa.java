@@ -15,7 +15,7 @@ public class InterfaceCaixa extends JFrame {
     public static void exibirJanelaCaixa (Academia academia, JFrame interfacePrincipal) {
 
         JFrame janelaCaixa = new JFrame("Modo caixa.");
-        janelaCaixa.setSize(600, 500);
+        janelaCaixa.setSize(800, 700);
         janelaCaixa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaCaixa.setLocationRelativeTo(null);
         janelaCaixa.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40)); 
@@ -75,7 +75,7 @@ public class InterfaceCaixa extends JFrame {
     public static void exibeTelaCheckIn(Academia academia, JFrame interfacePrincipal) {
 
         JFrame telaCheckIn = new JFrame("Tela de Check-in.");
-        telaCheckIn.setSize(600, 500);
+        telaCheckIn.setSize(800, 700);
         telaCheckIn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         telaCheckIn.setLocationRelativeTo(null);
         telaCheckIn.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40)); 

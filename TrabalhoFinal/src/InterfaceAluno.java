@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 public class InterfaceAluno extends JFrame {
 
@@ -97,8 +98,24 @@ public class InterfaceAluno extends JFrame {
         mensagem.setForeground(new Color(0, 102, 204));
         janelaTreino.add(mensagem);
 
-        JButton botaoTreinar = new JButton("Treinar");
-        botaoTreinar.setVisible(true);
+        ButtonGroup grupoTreinos = new ButtonGroup();
+        List<Treino> treinos = aluno.getTreinos();
+
+        for(Treino treino : treinos) {
+            JRadioButton botaoTreino = new JRadioButton(treino.getDescricao());
+            grupoTreinos.add(botaoTreino);
+            janelaTreino.add(botaoTreino);
+        }
+        //Trecho acima cria um grupo de botões e, adiciona a desrição de cada treino neles, ao marcar um, desmarca os outros.
+
+        JButton botaoComecarTreino = new JButton("Treinar");
+        botaoComecarTreino.setVisible(true);
+
+        botaoComecarTreino.addActionListener(e -> {
+            //Precisamos comparar o treino escolhido (a descrição que aparece na tela) com a descricao dos treinos da nossa lista pre-definida,
+            //assim, comparamos, pegamos o ID do treino com mesma descrição e, passamos como parametro pra chamar o metodo exibirJanelaExercicios().
+        });
+
 
         JButton botaoVoltar = new JButton("Voltar");
         botaoVoltar.addActionListener(e -> {
@@ -107,7 +124,7 @@ public class InterfaceAluno extends JFrame {
         });
 
         janelaTreino.add(botaoVoltar);
-        janelaTreino.add(botaoTreinar);
+        janelaTreino.add(botaoComecarTreino);
         janelaTreino.setVisible(true);
 
     }
@@ -115,5 +132,16 @@ public class InterfaceAluno extends JFrame {
     public static void exibirJanelaExercicios(Academia academia, Treino treino, JFrame interfacePrincipal) {
         //Neste método, preciso que o aluno selecione o treino que deseja fazer em uma lista, em seguida, vai solicitar para ele
         //o peso que será utilizado em qualquer um, logo após, abrir um painel de estatística.
+
+        JFrame janelaExercicios = new JFrame ("Exercicios do treino de " + treino.getDescricao() + ".");
+        janelaExercicios.setSize(600, 500);
+        janelaExercicios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janelaExercicios.setLocationRelativeTo(null);
+        janelaExercicios.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40)); 
+
+        JLabel tituloInterno = new JLabel("Selecione a carga para cada exercicio: ");
+        tituloInterno.setFont(new Font("Times New Roman", Font.BOLD, 22)); 
+        tituloInterno.setForeground(new Color(0, 102, 204));
+        janelaExercicios.add(tituloInterno);
     }
 }

@@ -1,7 +1,7 @@
 public class FuncionarioCaixa extends Funcionario {
 
-	public FuncionarioCaixa(String nome, String cpf, String dataNasc, int idFuncionario, String dataContratacao, Cargo cargo, boolean emAtendimento) {
-    	super(nome, cpf, dataNasc, idFuncionario, dataContratacao, cargo, emAtendimento);
+	public FuncionarioCaixa(String nome, String cpf, String dataNasc, int idFuncionario, String dataContratacao, Cargo cargo) {
+    	super(nome, cpf, dataNasc, idFuncionario, dataContratacao, cargo);
 	}
 
 	public void liberarEntrada(Aluno a) {

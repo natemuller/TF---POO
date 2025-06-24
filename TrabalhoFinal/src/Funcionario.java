@@ -8,12 +8,11 @@ public class Funcionario extends Pessoa implements Comparable<Funcionario> {
 
 	private boolean emAtendimento;
 
-	public Funcionario(String nome, String cpf, String dataNasc, int idFuncionario, String dataContratacao, Cargo cargo, boolean emAtendimento) {
+	public Funcionario(String nome, String cpf, String dataNasc, int idFuncionario, String dataContratacao, Cargo cargo) {
 		super(nome, cpf, dataNasc);
 		this.idFuncionario = idFuncionario;
 		this.dataContratacao = dataContratacao;
 		this.cargo = cargo;
-		this.emAtendimento = emAtendimento;
 	}
 
 	public int getIdFuncionario() {

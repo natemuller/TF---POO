@@ -116,7 +116,8 @@ public class InterfaceAdministrador extends JFrame {
        Set<Funcionario> funcionarios = academia.getFuncionarios();
 
         for (Funcionario f : funcionarios) {
-            JLabel labelFuncionario = new JLabel(f.toString());
+            JTextArea labelFuncionario = new JTextArea(f.toString());
+            labelFuncionario.setEditable(false);
             consultaFuncionarios.add(labelFuncionario);
         }
 
@@ -146,7 +147,8 @@ public class InterfaceAdministrador extends JFrame {
         Set<Aluno> alunos = academia.getAlunos();
 
         for(Aluno a : alunos) {
-            JLabel labelAluno = new JLabel(a.toString());
+            JTextArea labelAluno = new JTextArea(a.toString());
+            labelAluno.setEditable(false);
             consultaAlunos.add(labelAluno);
         }
         
@@ -176,7 +178,8 @@ public class InterfaceAdministrador extends JFrame {
         Map<Integer, Treino> treinosMap = academia.getTreinosMap();
 
         for(Treino t : treinosMap.values()) {
-            JLabel labelTreino = new JLabel(t.toString());
+            JTextArea labelTreino = new JTextArea(t.toString());
+            labelTreino.setEditable(false);
             consultaTreinos.add(labelTreino);
         }
 

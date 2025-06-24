@@ -5,10 +5,10 @@ public class Teste {
 
 
         //Funcionarios Caixa pré-definidos:
-        Funcionario funcionario1 = new FuncionarioCaixa("Joaquim", "123.456.789-00", "11/01/2005", 1, "01/01/2021", Cargo.CAIXA, true);
-        Funcionario funcionario2 = new FuncionarioCaixa("Renato", "123.456.789-00", "01/01/2002", 2, "01/01/2021", Cargo.CAIXA, true);
-        Funcionario funcionario3 = new FuncionarioCaixa("Gustavo", "123.453.809-00", "11/01/2000", 3, "01/01/2021", Cargo.CAIXA, true);
-        Funcionario funcionario4 = new FuncionarioCaixa("Matheus", "333.456.789-00", "01/08/2000", 4, "01/01/2021", Cargo.CAIXA, true);
+        Funcionario funcionario1 = new FuncionarioCaixa("Joaquim", "123.456.789-00", "11/01/2005", 1, "01/01/2021", Cargo.CAIXA);
+        Funcionario funcionario2 = new FuncionarioCaixa("Renato", "123.456.789-00", "01/01/2002", 2, "01/01/2021", Cargo.CAIXA);
+        Funcionario funcionario3 = new FuncionarioCaixa("Gustavo", "123.453.809-00", "11/01/2000", 3, "01/01/2021", Cargo.CAIXA);
+        Funcionario funcionario4 = new FuncionarioCaixa("Matheus", "333.456.789-00", "01/08/2000", 4, "01/01/2021", Cargo.CAIXA);
 
         academia.adicionarFuncionario(funcionario1);
         academia.adicionarFuncionario(funcionario2);
@@ -17,10 +17,10 @@ public class Teste {
 
 
         //Funcionarios Professor pré-definidos:
-        Funcionario funcionario5 = new FuncionarioProfessor("Jorge", "123.222.789-00", "01/11/2001", 5, "01/01/2021", Cargo.PROFESSOR, true);
-        Funcionario funcionario6 = new FuncionarioProfessor("Adamastor", "111.456.789-00", "01/01/2007", 6, "01/01/2021", Cargo.PROFESSOR, true);
-        Funcionario funcionario7 = new FuncionarioProfessor("Paulo", "123.456.789-22", "20/08/2000", 7, "01/01/2021", Cargo.PROFESSOR, true);
-        Funcionario funcionario8 = new FuncionarioProfessor("Joaquina", "123.222.789-00", "20/03/2000", 8, "01/01/2021", Cargo.PROFESSOR, true);
+        Funcionario funcionario5 = new FuncionarioProfessor("Jorge", "123.222.789-00", "01/11/2001", 5, "01/01/2021", Cargo.PROFESSOR);
+        Funcionario funcionario6 = new FuncionarioProfessor("Adamastor", "111.456.789-00", "01/01/2007", 6, "01/01/2021", Cargo.PROFESSOR);
+        Funcionario funcionario7 = new FuncionarioProfessor("Paulo", "123.456.789-22", "20/08/2000", 7, "01/01/2021", Cargo.PROFESSOR);
+        Funcionario funcionario8 = new FuncionarioProfessor("Joaquina", "123.222.789-00", "20/03/2000", 8, "01/01/2021", Cargo.PROFESSOR);
         
         academia.adicionarFuncionario(funcionario5);
         academia.adicionarFuncionario(funcionario6);
@@ -124,8 +124,6 @@ public class Teste {
            academia.adicionarTreino(t3);
            academia.adicionarTreino(t4);
            academia.adicionarTreino(t5);
-
-           aluno1.setEmTreinamento(true);
 
         //Adicionando os treinos em todos os alunos:
         for (Aluno a : academia.getAlunos()) {

@@ -49,6 +49,7 @@ public class InterfaceCaixa extends JFrame {
                 else {
                     JOptionPane.showMessageDialog(null, "Caixa encontrado: " + caixa.getNome());
                     botaoCheckIn.setVisible(true);
+                    caixa.setEmAtendimento(true);
                 }
             }
             catch (NumberFormatException ex) {
@@ -105,7 +106,7 @@ public class InterfaceCaixa extends JFrame {
                 }
             }
             catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Digite uma matricula valida. Somente números");
+                JOptionPane.showMessageDialog(null, "Digite um ID valida. Somente números");
             }
         });
 

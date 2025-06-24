@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.List;
 
 public class InterfaceAluno extends JFrame {
 
@@ -27,7 +26,7 @@ public class InterfaceAluno extends JFrame {
         janelaAluno.add(tituloInterno);
 
         JTextField campoMatricula = new JTextField(20);
-        
+
         JButton botaoBuscar = new JButton("Buscar"); 
         janelaAluno.add(botaoBuscar);
 
@@ -41,7 +40,7 @@ public class InterfaceAluno extends JFrame {
             interfacePrincipal.setVisible(true);
         });
 
-        final Aluno[] alunoAtual = new Aluno[1];
+        final Aluno[] alunoAtual = new Aluno[1]; //Precisei adicionar esse trecho para que o botaoTreinar fosse visivel apenas quando o aluno fosse encontrado
         
         botaoBuscar.addActionListener(e -> {
             try {

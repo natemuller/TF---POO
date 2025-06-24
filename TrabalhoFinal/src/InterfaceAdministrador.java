@@ -25,7 +25,7 @@ public class InterfaceAdministrador extends JFrame {
         tituloInterno.setForeground(new Color(0, 102, 204));
         janelaAdministrador.add(tituloInterno);
 
-        JTextField campoSenha = new JTextField(20);
+        JTextField campoSenha = new JPasswordField(20);
 
         JButton botaoBuscar = new JButton("Buscar"); 
         janelaAdministrador.add(botaoBuscar);

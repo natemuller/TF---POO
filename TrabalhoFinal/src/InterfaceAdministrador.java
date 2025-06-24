@@ -63,11 +63,38 @@ public class InterfaceAdministrador extends JFrame {
         janelaAdministrador.setLocationRelativeTo(null);
         janelaAdministrador.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 40));
 
-        JLabel tituloInterno = new JLabel("Selecione uma opcao: "); 
+        JLabel tituloInterno = new JLabel("Selecione uma opcao de consulta: "); 
         tituloInterno.setFont(new Font("Times New Roman", Font.BOLD, 22)); 
         tituloInterno.setForeground(new Color(0, 102, 204));
         janelaAdministrador.add(tituloInterno);
 
         janelaAdministrador.setVisible(true);
+
+        JButton botaoFuncionarios = new JButton("Funcionarios");
+        janelaAdministrador.add(botaoFuncionarios);
+
+        JButton botaoAlunos = new JButton("Alunos");
+        janelaAdministrador.add(botaoAlunos);
+
+        JButton botaoTreinos = new JButton("Treinos");
+        janelaAdministrador.add(botaoTreinos);
+
+        JButton botaoVoltar = new JButton("Voltar");
+        botaoVoltar.addActionListener(e -> {
+            janelaAdministrador.setVisible(false);
+            interfacePrincipal.setVisible(true);
+        });
+    }
+
+    public static void janelaConsultaFuncionarios(Academia academia, JFrame interfacePrincipal) {
+
+    }
+
+    public static void janelaConsultaAlunos(Academia academia, JFrame interfacePrincipal) {
+    
+    }
+
+    public static void janelaConsultaTreinos(Academia academia, JFrame interfacePrincipal) {
+    
     }
 }
